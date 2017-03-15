@@ -1,14 +1,33 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary" class="header">
     <button ion-button menuToggle icon-only>
       <ion-icon name='menu'></ion-icon>
     </button>
     <ion-title>
-      Alpine Meadows
+      <img src="../../assets/Meadows.png" alt="">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="master">
+
+  <ion-card>
+    <img src="../../assets/Breckenridge.jpg"/>
+    <div class="card-title">Quality and affordable vacation rentals</div>
+    <div class="card-subtitle">Breckenridge, CO</div>
+  </ion-card>
+
+<ion-card class="lower-content">
+  <ion-card-content>
+    <p color="primary"><strong>Alpine Meadows provides quality and affordable Vacation Rentals in Breckenridge, Colorado. Whether it is winter, spring, summer or fall, Alpine Meadows offers your perfect getaway in the Mountains.</strong></p>
+  </ion-card-content>
+</ion-card>
+
+<button ion-button color="secondary" class="lower-content buttfun"><p color="primary"><strong>View Rentels</strong></p></button>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+  </ion-toolbar>
+</ion-footer>
