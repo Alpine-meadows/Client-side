@@ -6,6 +6,10 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MainPage } from '../pages/main/main';
+import { RentalsPage } from '../pages/rentals/rentals';
+import { PropertyService } from '../services/property.service';
+import { FilterService } from '../services/filter.service';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { MainPage } from '../pages/main/main';
     ContactPage,
     HomePage,
     TabsPage,
-    MainPage
+    MainPage,
+    RentalsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,8 +31,9 @@ import { MainPage } from '../pages/main/main';
     ContactPage,
     HomePage,
     TabsPage,
-    MainPage
+    MainPage,
+    RentalsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ FilterService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

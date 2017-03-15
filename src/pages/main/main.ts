@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { RentalsPage } from '../rentals/rentals';
 
 
 @Component({
@@ -10,11 +11,12 @@ import { HomePage } from '../home/home';
 export class MainPage {
 
   private rootPage;
-  private homePage;
+  private rentalsPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, menu: MenuController) {
     this.rootPage = HomePage;
-    this.homePage = HomePage;
+    this.rentalsPage = RentalsPage;
+    menu.enable(true);
 
   }
 
@@ -25,5 +27,6 @@ export class MainPage {
   openPage(p) {
     this.rootPage = p;
   }
+
 
 }

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary" class="header">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      <img class="navPic" src="http://i.imgur.com/Ej3rc5s.png" alt="">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="master">
+
+  <ion-list *ngFor="let property of properties">
+
+    <ion-card >
+      <img src="{{property.picture}}"/>
+      <ion-card-content>
+        <ion-card-title color="primary">
+          {{property.name}}
+        </ion-card-title>
+        <button ion-button clear item-right (click)="veiwRoom(property)">View</button>
+        <div>
+          <p ion-text color="primary"><strong>Address: </strong>{{property.location}}</p>
+          <p ion-text color="primary"><strong>Number of rooms: </strong>{{property.numberOfRooms}}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <button ion-button block color="primary" (click)="goHome()">
+      <ion-icon class="icon" name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>
