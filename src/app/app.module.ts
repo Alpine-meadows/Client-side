@@ -7,9 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MainPage } from '../pages/main/main';
 import { RentalsPage } from '../pages/rentals/rentals';
+import { RoomsPage } from '../pages/rooms/rooms';
 import { PropertyService } from '../services/property.service';
 import { FilterService } from '../services/filter.service';
-
+import { RoomsService } from '../services/rooms.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FilterService } from '../services/filter.service';
     HomePage,
     TabsPage,
     MainPage,
-    RentalsPage
+    RentalsPage,
+    RoomsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,8 +34,9 @@ import { FilterService } from '../services/filter.service';
     HomePage,
     TabsPage,
     MainPage,
-    RentalsPage
+    RentalsPage,
+    RoomsPage
   ],
-  providers: [ FilterService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

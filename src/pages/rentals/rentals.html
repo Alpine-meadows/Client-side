@@ -19,11 +19,7 @@
         <ion-card-title color="primary">
           {{property.name}}
         </ion-card-title>
-        <button ion-button clear item-right (click)="veiwRoom(property)">View</button>
-        <div>
-          <p ion-text color="primary"><strong>Address: </strong>{{property.location}}</p>
-          <p ion-text color="primary"><strong>Number of rooms: </strong>{{property.numberOfRooms}}</p>
-        </div>
+        <button ion-button block (click)="viewRooms(property)">Book a room</button>
       </ion-card-content>
     </ion-card>
 

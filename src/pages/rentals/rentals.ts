@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController, App } from 'ionic-angular';
 import { PropertyService } from '../../services/property.service';
 import { HomePage } from '../home/home';
-import { Property } from '../../pipes/property';
 import { FilterService } from '../../services/filter.service';
+import { RoomsPage } from '../rooms/rooms';
 
 /*
   Generated class for the Rentals page.
@@ -20,7 +20,7 @@ export class RentalsPage {
   properties: any;
   searchTerm: string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private propertyService: PropertyService, private filterService: FilterService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private propertyService: PropertyService) {
     menu.enable(true);
   }
 
@@ -38,7 +38,7 @@ export class RentalsPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-  viewItem(property){
+  viewRooms(property){
     this.navCtrl.push(RoomsPage, {
       property:property
     });

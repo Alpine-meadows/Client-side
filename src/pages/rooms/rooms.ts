@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { RoomsService } from '../../services/rooms.service';
 
 /*
   Generated class for the Rooms page.
@@ -12,11 +14,24 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'rooms.html'
 })
 export class RoomsPage {
+  property: any;
+  rooms: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private roomsService: RoomsService) {
+    this.property = navParams.get('property');
+  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RoomsPage');
+  getRooms(){
+    this.roomsService.getRooms(this.property.id).subscribe(response => {
+      this.rooms = response;
+    })
+  }
+
+  ngOnInit(){
+    this.getRooms();
+  }
+  goHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

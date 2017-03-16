@@ -1,18 +1,46 @@
-<!--
-  Generated template for the Rooms page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>rooms</ion-title>
+  <ion-navbar color="primary" class="header">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      <img class="navPic" src="http://i.imgur.com/Ej3rc5s.png" alt="">
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding class="master">
+  <ion-card >
+    <img src="{{property.picture}}"/>
+    <ion-card-content>
+      <ion-card-title color="primary">
+        {{property.name}}
+      </ion-card-title>
+      <div>
+        <p ion-text color="primary"><strong>Address: </strong>{{property.location}}</p>
+        <p ion-text color="primary"><strong>Number of rooms: </strong>{{property.numberOfRooms}}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
-<ion-content padding>
+  <ion-card>
+    <ion-card-header color="primary">
+      Rooms
+    </ion-card-header>
+    <ion-list *ngFor="let room of rooms">
+      <button ion-item>
+        <p ion-text color="primary">{{room.roomNumber}}</p>
+      </button>
+    </ion-list>
+  </ion-card>
+
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <button ion-button block color="primary" (click)="goHome()">
+      <ion-icon class="icon" name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>
