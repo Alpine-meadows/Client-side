@@ -10,7 +10,7 @@ export class PropertyService{
 
   constructor(http: Http){
     this.http = http;
-    this.baseUrl = 'http://localhost:3000/property'
+    this.baseUrl = 'https://alpine-meadows.herokuapp.com/property'
   }
 
   getProperties(){
