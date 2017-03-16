@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 /*
@@ -15,7 +15,7 @@ import { HomePage } from '../home/home';
 export class BookingPage {
   property: any;
   room: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
     this.property = navParams.get('property');
     this.room = navParams.get('room');
   }
@@ -26,6 +26,10 @@ export class BookingPage {
 
   goHome(){
     this.navCtrl.setRoot(HomePage);
+  }
+  presentModal() {
+    let modal = this.modalCtrl.create(ModalPage);
+    modal.present();
   }
 
 }
