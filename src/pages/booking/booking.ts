@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { BookingModalPage } from '../booking-modal/booking-modal';
 
 /*
   Generated class for the Booking page.
@@ -21,14 +22,17 @@ export class BookingPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.property, this.room);
+
   }
 
   goHome(){
     this.navCtrl.setRoot(HomePage);
   }
-  presentModal() {
-    let modal = this.modalCtrl.create(ModalPage);
+  presentModal(room, property) {
+    let modal = this.modalCtrl.create(BookingModalPage, {
+      property:property,
+      room:room
+    });
     modal.present();
   }
 

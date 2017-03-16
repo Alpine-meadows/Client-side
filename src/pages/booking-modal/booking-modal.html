@@ -1,18 +1,63 @@
-<!--
-  Generated template for the BookingModal page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>booking-modal</ion-title>
+  <ion-navbar color="primary" class="header">
+    <button ion-button (click)="dismiss()">
+      <span ion-text>Cancel</span>
+    </button>
+    <ion-title>
+      <img class="navPic" src="http://i.imgur.com/Ej3rc5s.png" alt="">
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding class="master">
 
-<ion-content padding>
+  <ion-card>
+    <ion-card-header color="primary">
+      Reservation:
+    </ion-card-header>
+    <ion-card-content>
+      <p ion-text color="primary" ><strong>Property: </strong>{{property.name}}</p>
+      <p><strong>Room: </strong>{{room.roomNumber}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input [(ngModel)]="reservation.email" type="text" name="reservation.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>First Name</ion-label>
+      <ion-input [(ngModel)]="reservation.firstName" type="text" name="reservation.firstName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Last Name</ion-label>
+      <ion-input [(ngModel)]="reservation.lastName" type="text" name="reservation.lastName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="reservation.start" name="reservation.start"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="reservation.end" name="reservation.end"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <button ion-button block color="primary" (click)="goHome()">
+      <ion-icon class="icon" name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>
