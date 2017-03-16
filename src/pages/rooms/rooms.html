@@ -28,7 +28,7 @@
       Rooms
     </ion-card-header>
     <ion-list *ngFor="let room of rooms">
-      <button ion-item>
+      <button ion-item (click)="bookRoom(property, room)">
         <p ion-text color="primary">{{room.roomNumber}}</p>
       </button>
     </ion-list>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RoomsService } from '../../services/rooms.service';
+import { BookingPage } from '../booking/booking';
+
 
 /*
   Generated class for the Rooms page.
@@ -32,6 +34,13 @@ export class RoomsPage {
   }
   goHome(){
     this.navCtrl.setRoot(HomePage);
+  }
+
+  bookRoom(property, room){
+    this.navCtrl.push(BookingPage, {
+      property:property,
+      room:room
+    });
   }
 
 }

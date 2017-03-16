@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /*
   Generated class for the Booking page.
@@ -12,11 +13,19 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'booking.html'
 })
 export class BookingPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  property: any;
+  room: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.property = navParams.get('property');
+    this.room = navParams.get('room');
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BookingPage');
+    console.log(this.property, this.room);
+  }
+
+  goHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
