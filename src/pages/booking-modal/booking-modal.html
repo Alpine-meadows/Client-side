@@ -17,7 +17,7 @@
     </ion-card-header>
     <ion-card-content>
       <p ion-text color="primary" ><strong>Property: </strong>{{property.name}}</p>
-      <p><strong>Room: </strong>{{room.roomNumber}}</p>
+      <p ion-text color="primary" ><strong>Room: </strong>{{room.roomNumber}}</p>
     </ion-card-content>
   </ion-card>
 
@@ -46,11 +46,13 @@
 
 
     <ion-item>
-      <ion-label>Start Date</ion-label>
+      <ion-label>End Date</ion-label>
       <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="reservation.end" name="reservation.end"></ion-datetime>
     </ion-item>
 
   </ion-list>
+
+  <button ion-button block color="primary" (click)="postReservation()">Submit</button>
 
 </ion-content>
 

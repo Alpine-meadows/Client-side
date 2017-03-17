@@ -13,6 +13,7 @@ import { BookingModalPage } from '../pages/booking-modal/booking-modal';
 import { PropertyService } from '../services/property.service';
 import { FilterService } from '../services/filter.service';
 import { RoomsService } from '../services/rooms.service';
+import { ReservationService } from '../services/reservation.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,6 @@ import { RoomsService } from '../services/rooms.service';
     BookingPage,
     BookingModalPage
   ],
-  providers: [ RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

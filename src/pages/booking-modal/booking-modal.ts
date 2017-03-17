@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { HomePage } from '../home/home'
-
+import { ReservationService } from '../../services/reservation.service';
+import * as moment from 'moment';
 /*
   Generated class for the BookingModal page.
 
@@ -17,12 +18,16 @@ export class BookingModalPage {
   property: any;
   reservation: reservation;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private reservationService: ReservationService) {
     this.room = navParams.get('room');
     this.property = navParams.get('property');
     this.reservation = {
-      start: '',
-      end: '',
+      memberId: 1,
+      propertyId: this.property.id,
+      roomId: this.room.id,
+      start: moment().format(),
+      end: moment().add(3, 'days').format(),
       email: '',
       firstName: '',
       lastName: ''
@@ -37,9 +42,19 @@ export class BookingModalPage {
     this.viewCtrl.dismiss();
   }
 
+  postReservation(){
+    this.reservationService.postReservation(this.reservation)
+      .then(res => {
+        console.log(res);
+      })
+  }
+
 }
 
 interface reservation {
+  memberId:number;
+  propertyId:number;
+  roomId:number;
   start:string;
   end:string;
   email:string;
