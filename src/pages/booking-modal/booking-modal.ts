@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-import { HomePage } from '../home/home'
+import { HomePage } from '../home/home';
 import { ReservationService } from '../../services/reservation.service';
+import { ConformationPage } from '../conformation/conformation';
 import * as moment from 'moment';
 /*
   Generated class for the BookingModal page.
@@ -42,10 +43,19 @@ export class BookingModalPage {
     this.viewCtrl.dismiss();
   }
 
+
+  conformationRedirect(reservation) {
+    this.navCtrl.setRoot(ConformationPage);
+  }
+
   postReservation(){
     this.reservationService.postReservation(this.reservation)
       .then(res => {
-        console.log(res);
+        if(res.status == 200){
+          this.conformationRedirect(res._body);
+        }else{
+          alert('Invaild reservation please try again');
+        }
       })
   }
 
