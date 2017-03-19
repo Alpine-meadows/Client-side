@@ -7,10 +7,12 @@ import 'rxjs/Rx';
 export class RoomsService{
   http: any;
   baseUrl: string;
+  localUrl: string;
 
   constructor(http: Http){
     this.http = http;
-    this.baseUrl = 'https://alpine-meadows.herokuapp.com/property/'
+    this.baseUrl = 'https://alpine-meadows.herokuapp.com/property/';
+    this.localUrl = 'http://localhost:3000/property/';
   }
 
   getRooms(propertyId){

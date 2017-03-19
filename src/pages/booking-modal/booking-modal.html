@@ -26,28 +26,28 @@
 
     <ion-item>
       <ion-label fixed>Email</ion-label>
-      <ion-input [(ngModel)]="reservation.email" type="text" name="reservation.email"></ion-input>
+      <ion-input required [(ngModel)]="reservation.email" type="text" name="reservation.email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>First Name</ion-label>
-      <ion-input [(ngModel)]="reservation.firstName" type="text" name="reservation.firstName"></ion-input>
+      <ion-input required [(ngModel)]="reservation.firstName" type="text" name="reservation.firstName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Last Name</ion-label>
-      <ion-input [(ngModel)]="reservation.lastName" type="text" name="reservation.lastName"></ion-input>
+      <ion-input required [(ngModel)]="reservation.lastName" type="text" name="reservation.lastName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Start Date</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="reservation.start" name="reservation.start"></ion-datetime>
+      <ion-datetime required displayFormat="MMM DD YYYY" min={{minStartDate}} max={{maxDate}} [(ngModel)]="reservation.start" name="reservation.start"></ion-datetime>
     </ion-item>
 
 
     <ion-item>
       <ion-label>End Date</ion-label>
-      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="reservation.end" name="reservation.end"></ion-datetime>
+      <ion-datetime required displayFormat="MMM DD YYYY" min={{minEndDate}} max={{maxDate}} [(ngModel)]="reservation.end" name="reservation.end"></ion-datetime>
     </ion-item>
 
   </ion-list>

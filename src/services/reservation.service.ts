@@ -8,10 +8,12 @@ import 'rxjs/add/operator/toPromise';
 export class ReservationService{
   http: any;
   baseUrl: string;
+  localUrl: string;
 
   constructor(http: Http){
     this.http = http;
-    this.baseUrl = 'http://localhost:3000/reservation'
+    this.baseUrl = 'https://alpine-meadows.herokuapp.com/reservation';
+    this.localUrl = 'http://localhost:3000/reservation';
   }
 
   postReservation(reservation){

@@ -1,18 +1,49 @@
-<!--
-  Generated template for the Conformation page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>conformation</ion-title>
+  <ion-navbar color="primary" class="header">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      <img class="navPic" src="http://i.imgur.com/Ej3rc5s.png" alt="">
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding class="master">
+  <ion-card>
 
-<ion-content padding>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2 ion-text color="primary">Conformation for your name here</h2>
+    </ion-item>
 
+    <img src="{{property.picture}}">
+
+    <ion-card-content>
+      <p><strong>Property:</strong> {{property.name}}</p>
+      <p><strong>Address:</strong> {{property.location}}</p>
+      <p><strong>Room Number:</strong> {{room.roomNumber}}</p>
+      <p><strong>Start Date:</strong> {{startDate}}</p>
+      <p><strong>End Date:</strong> {{endDate}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <button ion-button block color="primary" (click)="goHome()">
+      <ion-icon class="icon" name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>

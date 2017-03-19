@@ -9,6 +9,7 @@ import { MainPage } from '../pages/main/main';
 import { RentalsPage } from '../pages/rentals/rentals';
 import { RoomsPage } from '../pages/rooms/rooms';
 import { BookingPage } from '../pages/booking/booking';
+import { ConformationPage } from '../pages/conformation/conformation';
 import { BookingModalPage } from '../pages/booking-modal/booking-modal';
 import { PropertyService } from '../services/property.service';
 import { FilterService } from '../services/filter.service';
@@ -26,7 +27,8 @@ import { ReservationService } from '../services/reservation.service';
     RentalsPage,
     RoomsPage,
     BookingPage,
-    BookingModalPage
+    BookingModalPage,
+    ConformationPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -42,7 +44,8 @@ import { ReservationService } from '../services/reservation.service';
     RentalsPage,
     RoomsPage,
     BookingPage,
-    BookingModalPage
+    BookingModalPage,
+    ConformationPage
   ],
   providers: [ ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

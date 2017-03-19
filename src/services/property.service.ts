@@ -7,8 +7,10 @@ import 'rxjs/Rx';
 export class PropertyService{
   http: any;
   baseUrl: string;
+  localUrl: string;
 
   constructor(http: Http){
+    this.localUrl = 'http://localhost:3000/property'
     this.http = http;
     this.baseUrl = 'https://alpine-meadows.herokuapp.com/property'
   }

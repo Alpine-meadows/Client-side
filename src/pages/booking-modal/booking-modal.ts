@@ -18,6 +18,9 @@ export class BookingModalPage {
   room: any;
   property: any;
   reservation: reservation;
+  minStartDate: any;
+  minEndDate: any;
+  maxDate: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private reservationService: ReservationService) {
@@ -27,12 +30,17 @@ export class BookingModalPage {
       memberId: 1,
       propertyId: this.property.id,
       roomId: this.room.id,
-      start: moment().format(),
+      start: moment().add(1, 'days').format(),
       end: moment().add(3, 'days').format(),
       email: '',
       firstName: '',
-      lastName: ''
+      lastName: '',
+      room: this.room,
+      property: this.property
     }
+    this.minStartDate = moment().add(1, 'days').format("YYYY-MM-DD");
+    this.minEndDate = moment().add(2, 'days').format("YYYY-MM-DD");
+    this.maxDate = moment().add(2, 'years').format("YYYY-MM-DD");
   }
 
   goHome(){
@@ -46,7 +54,9 @@ export class BookingModalPage {
 
   conformationRedirect(reservation) {
     this.navCtrl.setRoot(ConformationPage, {
-      reservation:reservation
+      reservation:reservation,
+      property:this.property,
+      room:this.room
     });
   }
 
@@ -54,7 +64,7 @@ export class BookingModalPage {
     this.reservationService.postReservation(this.reservation)
       .then(res => {
         if(res.status == 200){
-          this.conformationRedirect(res._body);
+          this.conformationRedirect(this.reservation);
         }else{
           alert('Invaild reservation please try again');
         }
@@ -72,4 +82,6 @@ interface reservation {
   email:string;
   firstName:string;
   lastName:string;
+  room:any;
+  property:any;
 }
