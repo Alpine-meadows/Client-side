@@ -18,8 +18,8 @@ export class AuthService {
   constructor(private authHttp: AuthHttp, http: Http) {
     this.user = localStorage.getItem('profile')
     this.http = http;
-    this.baseUrl = 'https://alpine-meadows.herokuapp.com/signin';
-    this.localUrl = 'http://localhost:3000/signin';
+    this.baseUrl = 'https://alpine-meadows.herokuapp.com/';
+    this.localUrl = 'http://localhost:3000/';
   }
 
   public authenticated() {
@@ -27,7 +27,12 @@ export class AuthService {
   }
 
   public login(member) {
-    return this.http.post(this.localUrl, member)
+    return this.http.post(this.localUrl+'signin', member)
+      .toPromise()
+  }
+
+  public signup(newMember) {
+    return this.http.post(this.localUrl+'signup', newMember)
       .toPromise()
   }
 

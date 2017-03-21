@@ -10,6 +10,7 @@ import { MainPage } from '../pages/main/main';
 import { RentalsPage } from '../pages/rentals/rentals';
 import { RoomsPage } from '../pages/rooms/rooms';
 import { Login2Page } from '../pages/login2/login2';
+import { SignupPage } from '../pages/signup/signup';
 import { BookingPage } from '../pages/booking/booking';
 import { ConformationPage } from '../pages/conformation/conformation';
 import { BookingModalPage } from '../pages/booking-modal/booking-modal';
@@ -33,7 +34,8 @@ import { AuthService } from '../services/auth.service';
     BookingPage,
     BookingModalPage,
     ConformationPage,
-    Login2Page
+    Login2Page,
+    SignupPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -51,7 +53,8 @@ import { AuthService } from '../services/auth.service';
     BookingPage,
     BookingModalPage,
     ConformationPage,
-    Login2Page
+    Login2Page,
+    SignupPage
   ],
   providers: [ JwtHelper, AuthHttp, AuthService, ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}, AuthHttp,
         provideAuth({
