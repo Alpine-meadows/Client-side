@@ -17,7 +17,7 @@ export class ReservationService{
   }
 
   postReservation(reservation){
-    return this.http.post(this.baseUrl, reservation)
+    return this.http.post(this.localUrl, reservation)
       .toPromise()
   }
 }

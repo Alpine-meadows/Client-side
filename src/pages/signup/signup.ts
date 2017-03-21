@@ -52,5 +52,9 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
+  
+  goHome(){
+    this.navCtrl.setRoot(MainPage);
+  }
 
 }

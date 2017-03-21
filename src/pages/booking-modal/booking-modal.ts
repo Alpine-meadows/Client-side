@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { MainPage } from '../main/main';
 import { ReservationService } from '../../services/reservation.service';
 import { ConformationPage } from '../conformation/conformation';
 import * as moment from 'moment';
@@ -52,7 +53,7 @@ export class BookingModalPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(MainPage);
   }
 
   dismiss() {

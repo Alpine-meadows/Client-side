@@ -9,6 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { MainPage } from '../pages/main/main';
 import { RentalsPage } from '../pages/rentals/rentals';
 import { RoomsPage } from '../pages/rooms/rooms';
+import { UserPage } from '../pages/user/user';
 import { Login2Page } from '../pages/login2/login2';
 import { SignupPage } from '../pages/signup/signup';
 import { BookingPage } from '../pages/booking/booking';

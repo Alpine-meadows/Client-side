@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { MainPage } from '../main/main';
 import { RoomsService } from '../../services/rooms.service';
 import { BookingPage } from '../booking/booking';
 
@@ -33,7 +34,7 @@ export class RoomsPage {
     this.getRooms();
   }
   goHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(MainPage);
   }
 
   bookRoom(property, room){

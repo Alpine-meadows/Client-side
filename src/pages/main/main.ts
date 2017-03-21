@@ -3,6 +3,7 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RentalsPage } from '../rentals/rentals';
 import { Login2Page } from '../login2/login2';
+import { UserPage } from '../user/user';
 import {AuthHttp, JwtHelper, tokenNotExpired, AuthConfig} from 'angular2-jwt';
 
 
@@ -18,17 +19,16 @@ export class MainPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, menu: MenuController) {
     this.rootPage = HomePage;
     this.rentalsPage = RentalsPage;
-    this.token = localStorage.getItem('token');
     menu.enable(true);
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MainPage');
+    this.token = localStorage.getItem('token');
   }
 
   goLogin(){
-    this.navCtrl.setRoot(Login2Page);
+    this.navCtrl.push(Login2Page);
   }
 
   logout() {
@@ -37,7 +37,11 @@ export class MainPage {
     localStorage.removeItem('lastName');
     localStorage.removeItem('id');
     localStorage.removeItem('token');
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(Login2Page);
+  }
+
+  viewReservations(){
+    this.navCtrl.setRoot(UserPage);
   }
 
 

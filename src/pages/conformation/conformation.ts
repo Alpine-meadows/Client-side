@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { MainPage } from '../main/main';
 import * as moment from 'moment';
 
 /*
@@ -40,7 +41,7 @@ export class ConformationPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(MainPage);
   }
 
 }

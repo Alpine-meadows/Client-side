@@ -39,14 +39,15 @@ export class Login2Page {
           localStorage.setItem('id', this.response.member.id);
           localStorage.setItem('token', this.response.token);
           this.navCtrl.setRoot(MainPage);
-        }else{
+        }else if (res.status == 500){
           alert('Invaild login please try again');
+          this.navCtrl.setRoot(Login2Page);
         }
       })
   }
 
   goHome(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(MainPage);
   }
 
   goSignup(){
