@@ -13,10 +13,12 @@ import {AuthHttp, JwtHelper, tokenNotExpired, AuthConfig} from 'angular2-jwt';
 export class MainPage {
   private rootPage;
   private rentalsPage;
+  token: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, menu: MenuController) {
     this.rootPage = HomePage;
     this.rentalsPage = RentalsPage;
+    this.token = localStorage.getItem('token');
     menu.enable(true);
 
   }
@@ -27,6 +29,15 @@ export class MainPage {
 
   goLogin(){
     this.navCtrl.setRoot(Login2Page);
+  }
+
+  logout() {
+    localStorage.removeItem('email');
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    localStorage.removeItem('id');
+    localStorage.removeItem('token');
+    this.navCtrl.setRoot(HomePage);
   }
 
 

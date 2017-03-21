@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { MainPage } from '../main/main';
 import { HomePage } from '../home/home';
+import { SignupPage } from '../signup/signup';
 import { AuthService } from '../../services/auth.service';
 /*
   Generated class for the Login2 page.
@@ -36,7 +38,7 @@ export class Login2Page {
           localStorage.setItem('lastName', this.response.member.lastName);
           localStorage.setItem('id', this.response.member.id);
           localStorage.setItem('token', this.response.token);
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(MainPage);
         }else{
           alert('Invaild login please try again');
         }
@@ -45,6 +47,10 @@ export class Login2Page {
 
   goHome(){
     this.navCtrl.setRoot(HomePage);
+  }
+
+  goSignup(){
+    this.navCtrl.setRoot(SignupPage);
   }
 
 }

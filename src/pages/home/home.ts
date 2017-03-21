@@ -10,11 +10,19 @@ import { Login2Page } from '../login2/login2';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  token:any;
+  firstName:any;
   constructor(public navCtrl: NavController, app: App, menu: MenuController) {
     menu.enable(true);
+    this.token = localStorage.getItem('token');
+    this.firstName = localStorage.getItem('firstName');
   }
 
   viewRentals(){
     this.navCtrl.setRoot(RentalsPage);
+  }
+
+  goLogin(){
+    this.navCtrl.push(Login2Page);
   }
 }

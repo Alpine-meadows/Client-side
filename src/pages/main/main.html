@@ -6,9 +6,16 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item (click)="goLogin()">
-        Login
-      </button>
+      <div *ngIf="!token">
+        <button ion-item (click)="goLogin()">
+          Login
+        </button>
+      </div>
+      <div *ngIf="token">
+        <button ion-item (click)="logout()">
+          Logout
+        </button>
+      </div>
     </ion-list>
   </ion-content>
 </ion-menu>

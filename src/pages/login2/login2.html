@@ -23,7 +23,10 @@
         <ion-label color="primary" stacked>Password</ion-label>
         <ion-input [(ngModel)]="member.password" type="password" placeholder="Password Input" name="member.password"></ion-input>
       </ion-item>
-    <button ion-button block color="primary" (click)="login()"></button>
+    <button ion-button block color="primary" (click)="goSignup()">Submit</button>
+    <button ion-button clear item-right>
+      Create an account
+    </button>
   </ion-list>
 </ion-content>
 

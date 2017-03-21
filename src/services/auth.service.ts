@@ -31,9 +31,4 @@ export class AuthService {
       .toPromise()
   }
 
-  public logout() {
-    localStorage.removeItem('member');
-    localStorage.removeItem('token');
-    this.user = null;
-  }
 }
