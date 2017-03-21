@@ -40,4 +40,5 @@
         <variable name="APP_ID" value="416917202003798" />
         <variable name="APP_NAME" value="Alpine Meadows Management" />
     </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.7.0" />
 </widget>

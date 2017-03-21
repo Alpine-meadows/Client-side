@@ -21,20 +21,28 @@ export class BookingModalPage {
   minStartDate: any;
   minEndDate: any;
   maxDate: any;
+  email:any;
+  firstName:any;
+  lastName:any;
+  id:any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private reservationService: ReservationService) {
     this.room = navParams.get('room');
     this.property = navParams.get('property');
+    this.email = localStorage.getItem('email');
+    this.firstName = localStorage.getItem('firstName');
+    this.lastName = localStorage.getItem('lastName');
+    this.id = localStorage.getItem('id');
     this.reservation = {
-      memberId: 1,
+      memberId: this.id,
       propertyId: this.property.id,
       roomId: this.room.id,
       start: moment().add(1, 'days').format(),
       end: moment().add(3, 'days').format(),
-      email: '',
-      firstName: '',
-      lastName: '',
+      email: this.email,
+      firstName: this.firstName,
+      lastName: this.lastName,
       room: this.room,
       property: this.property
     }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RentalsPage } from '../rentals/rentals';
+import { Login2Page } from '../login2/login2';
+import {AuthHttp, JwtHelper, tokenNotExpired, AuthConfig} from 'angular2-jwt';
 
 
 @Component({
@@ -9,7 +11,6 @@ import { RentalsPage } from '../rentals/rentals';
   templateUrl: 'main.html'
 })
 export class MainPage {
-
   private rootPage;
   private rentalsPage;
 
@@ -24,8 +25,8 @@ export class MainPage {
     console.log('ionViewDidLoad MainPage');
   }
 
-  openPage(p) {
-    this.rootPage = p;
+  goLogin(){
+    this.navCtrl.setRoot(Login2Page);
   }
 
 

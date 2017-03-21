@@ -19,7 +19,15 @@ export class ConformationPage {
   room:any;
   startDate:any;
   endDate:any;
+  email:any;
+  firstName:any;
+  lastName:any;
+  id:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.email = localStorage.getItem('email');
+    this.firstName = localStorage.getItem('firstName');
+    this.lastName = localStorage.getItem('lastName');
+    this.id = localStorage.getItem('id');
     this.reservation = navParams.get('reservation');
     this.property = navParams.get('property');
     this.room = navParams.get('room')
@@ -28,7 +36,7 @@ export class ConformationPage {
   }
 
   ionViewDidLoad() {
-    console.log(this.reservation.reservation);
+
   }
 
   goHome(){
