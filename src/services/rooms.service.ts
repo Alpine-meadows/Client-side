@@ -16,7 +16,7 @@ export class RoomsService{
   }
 
   getRooms(propertyId){
-    return this.http.get(this.localUrl+propertyId+'/rooms')
+    return this.http.get(this.baseUrl+propertyId+'/rooms')
       .map(res => res.json());
   }
 }

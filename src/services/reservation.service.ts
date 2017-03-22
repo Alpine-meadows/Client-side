@@ -17,12 +17,12 @@ export class ReservationService{
   }
 
   postReservation(reservation){
-    return this.http.post(this.localUrl, reservation)
+    return this.http.post(this.baseUrl, reservation)
       .toPromise()
   }
 
   getMemberReservations(memberId){
-    return this.http.get(this.localUrl+'/'+memberId)
+    return this.http.get(this.baseUrl+'/'+memberId)
       .toPromise()
   }
 }

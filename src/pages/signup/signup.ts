@@ -36,7 +36,6 @@ export class SignupPage {
       .then(res => {
         if(res.status == 200){
           this.response = JSON.parse(res._body)
-          console.log(this.response.member[0])
           localStorage.setItem('email', this.response.member[0].email);
           localStorage.setItem('firstName', this.response.member[0].firstName);
           localStorage.setItem('lastName', this.response.member[0].lastName);
@@ -52,7 +51,7 @@ export class SignupPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-  
+
   goHome(){
     this.navCtrl.setRoot(MainPage);
   }

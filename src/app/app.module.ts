@@ -22,6 +22,8 @@ import { RoomsService } from '../services/rooms.service';
 import { provide } from 'angular2/core';
 import { ReservationService } from '../services/reservation.service';
 import { AuthService } from '../services/auth.service';
+import {enableProdMode} from '@angular/core';
+enableProdMode();
 
 @NgModule({
   declarations: [

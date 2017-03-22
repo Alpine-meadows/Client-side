@@ -18,7 +18,7 @@ export class PropertyService{
   }
 
   getProperties(){
-    return this.http.get(this.localUrl)
+    return this.http.get(this.baseUrl)
       .map(res => res.json());
   }
 }

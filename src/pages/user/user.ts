@@ -28,7 +28,6 @@ export class UserPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
     this.getMemberReservations();
   }
 
@@ -37,7 +36,6 @@ export class UserPage {
       .then(res => {
         if(res.status == 200){
           this.reservations = JSON.parse(res._body).reverse();
-          console.log(this.reservations)
         }else{
           alert('Invaild login please try again');
         }

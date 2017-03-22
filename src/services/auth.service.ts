@@ -27,12 +27,12 @@ export class AuthService {
   }
 
   public login(member) {
-    return this.http.post(this.localUrl+'signin', member)
+    return this.http.post(this.baseUrl+'signin', member)
       .toPromise()
   }
 
   public signup(newMember) {
-    return this.http.post(this.localUrl+'signup', newMember)
+    return this.http.post(this.baseUrl+'signup', newMember)
       .toPromise()
   }
 

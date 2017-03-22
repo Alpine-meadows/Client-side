@@ -32,7 +32,6 @@ export class Login2Page {
       .then(res => {
         if(res.status == 200){
           this.response = JSON.parse(res._body)
-          console.log(this.response.member)
           localStorage.setItem('email', this.response.member.email);
           localStorage.setItem('firstName', this.response.member.firstName);
           localStorage.setItem('lastName', this.response.member.lastName);

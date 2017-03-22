@@ -19,14 +19,14 @@
 
   <ion-card class="lower-content">
     <ion-card-content>
-      <p color="primary"><strong>Alpine Meadows provides quality and affordable Vacation Rentals in Breckenridge, Colorado. Whether it is winter, spring, summer or fall, Alpine Meadows offers your perfect getaway in the Mountains.</strong></p>
+      <p ion-text color="primary"><strong>Alpine Meadows provides quality and affordable Vacation Rentals in Breckenridge, Colorado. Whether it is winter, spring, summer or fall, Alpine Meadows offers your perfect getaway in the Mountains.</strong></p>
     </ion-card-content>
   </ion-card>
   <div *ngIf="token">
-    <button (click)="viewRentals()" ion-button color="secondary" class="lower-content buttfun"><p color="primary"><strong>View rentals</strong></p></button>
+    <button (click)="viewRentals()" ion-button color="secondary" class="lower-content buttfun"><p ion-text color="primary"><strong>View rentals</strong></p></button>
   </div>
   <div *ngIf="!token">
-    <button (click)="goLogin()" ion-button color="secondary" class="lower-content buttfun"><p color="primary"><strong>Login in to view rentals</strong></p></button>
+    <button (click)="goLogin()" ion-button color="secondary" class="lower-content buttfun"><p ion-text color="primary"><strong>Login in to view rentals</strong></p></button>
   </div>
 </ion-content>
 
