@@ -40,7 +40,7 @@ export class MainPage {
     this.navCtrl.setRoot(Login2Page);
   }
 
-  viewReservations(){
+  userPage(){
     this.navCtrl.setRoot(UserPage);
   }
 

@@ -1,18 +1,39 @@
-<!--
-  Generated template for the User page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>user</ion-title>
+  <ion-navbar color="primary" class="header">
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      <img class="navPic" src="http://i.imgur.com/Ej3rc5s.png" alt="">
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content padding class="master">
+  <ion-item>
+    <h2 ion-text color="primary">{{firstName}} {{lastName}}'s reservations</h2>
+  </ion-item>
+  <ion-list *ngFor="let reservation of reservations">
+    <ion-card>
 
-<ion-content padding>
+      <img src="{{reservation.property.picture}}">
 
+      <ion-card-content>
+        <p><strong>Property:</strong> {{reservation.property.name}}</p>
+        <p><strong>Address:</strong> {{reservation.property.location}}</p>
+        <p><strong>Room Number:</strong> {{reservation.room.roomNumber}}</p>
+        <p><strong>Start Date:</strong> {{moment(reservation.checkinDate).format("MMM Do YYYY")}}</p>
+        <p><strong>End Date:</strong> {{moment(reservation.checkoutDate).format("MMM Do YYYY")}}</p>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <button ion-button block color="primary" (click)="goHome()">
+      <ion-icon class="icon" name="home"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>

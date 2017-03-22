@@ -20,4 +20,9 @@ export class ReservationService{
     return this.http.post(this.localUrl, reservation)
       .toPromise()
   }
+
+  getMemberReservations(memberId){
+    return this.http.get(this.localUrl+'/'+memberId)
+      .toPromise()
+  }
 }

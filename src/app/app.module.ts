@@ -36,7 +36,8 @@ import { AuthService } from '../services/auth.service';
     BookingModalPage,
     ConformationPage,
     Login2Page,
-    SignupPage
+    SignupPage,
+    UserPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -55,7 +56,8 @@ import { AuthService } from '../services/auth.service';
     BookingModalPage,
     ConformationPage,
     Login2Page,
-    SignupPage
+    SignupPage,
+    UserPage
   ],
   providers: [ JwtHelper, AuthHttp, AuthService, ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}, AuthHttp,
         provideAuth({
