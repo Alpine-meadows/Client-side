@@ -9,7 +9,10 @@ page-login2 {
     margin: 0 auto;
   }
   .header {
-      padding: 4px;
-      min-height: 15vh;
+      height: 15vh;
+      .headerImg {
+        margin-top: 3em;
+        height: 90%;
+      }
   }
 }
