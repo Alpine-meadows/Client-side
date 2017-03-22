@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AuthHttp, AuthConfig, AUTH_PROVIDERS, provideAuth, JwtHelper, tokenNotExpired, } from 'angular2-jwt';
+import { MomentModule } from 'angular2-moment';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -40,7 +41,8 @@ import { AuthService } from '../services/auth.service';
     UserPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +61,7 @@ import { AuthService } from '../services/auth.service';
     SignupPage,
     UserPage
   ],
-  providers: [ JwtHelper, AuthHttp, AuthService, ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}, AuthHttp,
+  providers: [ MomentModule, JwtHelper, AuthHttp, AuthService, ReservationService, RoomsService, PropertyService, {provide: ErrorHandler, useClass: IonicErrorHandler}, AuthHttp,
         provideAuth({
             headerName: 'Authorization',
             headerPrefix: '',

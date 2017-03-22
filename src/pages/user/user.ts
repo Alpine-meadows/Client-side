@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ReservationService } from '../../services/reservation.service';
 import { MainPage } from '../main/main';
 import * as moment from 'moment';
+import { MomentModule } from 'angular2-moment';
 
 /*
   Generated class for the User page.
