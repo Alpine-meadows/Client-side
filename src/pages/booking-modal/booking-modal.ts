@@ -62,7 +62,7 @@ export class BookingModalPage {
 
 
   conformationRedirect(reservation) {
-    this.navCtrl.setRoot(ConformationPage, {
+    this.navCtrl.push(ConformationPage, {
       reservation:reservation,
       property:this.property,
       room:this.room
